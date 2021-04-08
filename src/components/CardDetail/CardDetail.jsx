@@ -4,7 +4,7 @@ import { CardDetailWrapperStyled, ImageWrapperStyled, ImageStyled, TitleImageSty
 import Status from '../Status/Status';
 
 const CardDetail = (props) => {
-    const { displayName, email, phone, avatarUrl, isOnline } = props;
+    const { displayName, email, phone, avatarUrl, isOnline, categoriesCollection } = props;
 
     return (
         <CardDetailWrapperStyled>
@@ -23,7 +23,15 @@ const CardDetail = (props) => {
                     {phone}
                 </ContactWrapperStyled>
                 <CategoryWrapperStyled>
-
+                    {categoriesCollection?.items.map(item => {
+                        const { avatarUrl, displayName } = item;
+                        return(
+                            <div>
+                                 <img src={avatarUrl?.url || ''} />
+                                <TitleImageStyled isCategory>{displayName || ''}</TitleImageStyled>
+                            </div>
+                        )
+                    })}
                 </CategoryWrapperStyled>
             </InfoWrapperStyled>
             <Status isOnline={isOnline} />

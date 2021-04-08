@@ -14,7 +14,7 @@ export const ImageWrapperStyled = styled.div`
     overflow: hidden;
 `;
 export const TitleImageStyled= styled.div`
-    font-size: 12px;
+    font-size: ${(props) => props.isCategory ? '10px': '12px'};
 `;
 
 export const ImageStyled = styled.img`
@@ -62,4 +62,18 @@ export const ContactWrapperStyled = styled.h6`
     text-overflow: ellipsis;
 `;
 
-export const CategoryWrapperStyled = styled.div``;
+export const CategoryWrapperStyled = styled.div`
+    display: flex;
+    text-align: center;
+    margin: 5px;
+    overflow: hidden;
+    > div{
+        width: 50px;
+        overflow: hidden;
+        img{
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+        }
+    }
+`;
