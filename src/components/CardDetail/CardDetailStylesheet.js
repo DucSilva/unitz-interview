@@ -4,7 +4,7 @@ export const CardDetailWrapperStyled = styled.div`
     display: flex;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 1px 2px 2px 1px #535051;
+    box-shadow: 1px 2px 2px 1px #4AC0A4;
     margin: 10px;
 `;
 
