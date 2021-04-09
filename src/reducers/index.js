@@ -54,7 +54,7 @@ export default function (state = initialState, { type, payload }) {
         }
 
         case FILTER_BY_NAME_SUCCESS: {
-            const { _data, payload: _payload } = payload;
+            const { _data } = payload;
             return {
                 ...state,
                 isFetching: false,

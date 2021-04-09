@@ -24,6 +24,7 @@ const Header = () => {
 
     const handleClickStatus = (value) => {
         dispatch(filterByStatus(value))
+        setSearchTerm('')
     }
 
     const handleClearSort = (e) => {

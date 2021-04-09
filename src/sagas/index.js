@@ -33,9 +33,7 @@ function* filterByName({ payload }) {
     try {
         yield delay(500); // because get data from json so it get very quickly => i just want to delay to check loading
 
-        const _data =  data?.data?.advisorProfileCollection?.items.filter(item => {
-            return item.displayName.toLowerCase().includes(payload.toLowerCase());
-        })
+        const _data =  data?.data?.advisorProfileCollection?.items.filter((item) => item.displayName.toLowerCase().includes(payload.toLowerCase()));
      
         yield put(filterByNameSuccess({ _data, payload }));
     } catch (error) {

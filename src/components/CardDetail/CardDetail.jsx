@@ -1,5 +1,5 @@
 import React from 'react';
-import { bool, string, number, shape } from 'prop-types';
+import { bool, string, shape } from 'prop-types';
 import { CardDetailWrapperStyled, ImageWrapperStyled, ImageStyled, TitleImageStyled, InfoWrapperStyled, NameStyled, CategoryWrapperStyled, ContactWrapperStyled } from './CardDetailStylesheet';
 import Status from '../Status/Status';
 
@@ -23,10 +23,10 @@ const CardDetail = (props) => {
                     {phone}
                 </ContactWrapperStyled>
                 <CategoryWrapperStyled>
-                    {categoriesCollection?.items.map(item => {
+                    {categoriesCollection?.items.map((item, idx) => {
                         const { avatarUrl, displayName } = item;
                         return(
-                            <div>
+                            <div key={idx + 1}>
                                  <img src={avatarUrl?.url || ''} />
                                 <TitleImageStyled isCategory>{displayName || ''}</TitleImageStyled>
                             </div>
