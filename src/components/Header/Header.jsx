@@ -18,6 +18,10 @@ const Header = () => {
         if(debouncedSearchTerm) dispatch(filterByName({payload: debouncedSearchTerm}));
     }, [debouncedSearchTerm])
 
+    React.useEffect(() => {
+        if(debouncedSearchTerm === '') dispatch(getData()); // fix bug not search if clear input field
+    }, [debouncedSearchTerm])
+
     const handleFilterStatus = () => {
         setIsFilterStatus(pStatus => !pStatus);
     }
